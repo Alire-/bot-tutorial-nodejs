@@ -20,7 +20,7 @@ function respond() {
 function postMessage() {
   var botResponse, options, body, botReq;
 
-  botResponse = "Shut the fuck up about Oklahoma. Forever";
+  botResponse = "Your dick controls you, tool.";
 
   options = {
     hostname: 'api.groupme.com',
