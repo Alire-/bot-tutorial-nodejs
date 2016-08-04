@@ -4,7 +4,7 @@ http        = require('http');
 director    = require('director');
 cool        = require('cool-ascii-faces');
 bot         = require('./bot.js');
-bot         = require('./okc.js');
+okc         = require('./okc.js');
 
 router = new director.http.Router({
   '/' : {
