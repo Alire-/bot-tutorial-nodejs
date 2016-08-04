@@ -2,7 +2,6 @@ var http, director, cool, bot, router, server, port, gif;
 
 http        = require('http');
 director    = require('director');
-cool        = require('cool-ascii-faces');
 bot         = require('./bot.js');
 gif         = require('./gif.js');
 
