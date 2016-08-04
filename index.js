@@ -4,10 +4,11 @@ http        = require('http');
 director    = require('director');
 cool        = require('cool-ascii-faces');
 bot         = require('./bot.js');
+okc = require('./okc.js');
 
 router = new director.http.Router({
   '/' : {
-    post: bot.respond,
+    post: okc.respond,
     get: ping
   }
 });
