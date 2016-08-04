@@ -4,10 +4,13 @@ http        = require('http');
 director    = require('director');
 cool        = require('cool-ascii-faces');
 bot         = require('./bot.js');
+dickcontrol = require('./dickcontrol.js')
 
 router = new director.http.Router({
   '/' : {
     post: bot.respond,
+    get: ping
+    post: dickcontrol.respond,
     get: ping
   }
 });
