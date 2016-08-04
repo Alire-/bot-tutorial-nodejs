@@ -6,12 +6,32 @@ cool        = require('cool-ascii-faces');
 bot         = require('./bot.js');
 dickcontrol = require('./dickcontrol.js')
 
-router = new director.http.Router({
+router1 = new director.http.Router({
   '/' : {
     post: bot.respond,
     get: ping
   }
-  {
+});
+
+
+server1 = http.createServer(function (req, res) {
+  req.chunks = [];
+  req.on('data', function (chunk) {
+    req.chunks.push(chunk.toString());
+  });
+
+  router.dispatch(req, res, function(err) {
+    res.writeHead(err.status, {"Content-Type": "text/plain"});
+    res.end(err.message);
+  });
+});
+
+
+
+
+
+router = new director.http.Router({
+  '/' : {
     post: dickcontrol.respond,
     get: ping
   }
@@ -29,6 +49,10 @@ server = http.createServer(function (req, res) {
     res.end(err.message);
   });
 });
+
+
+
+
 
 port = Number(process.env.PORT || 5000);
 server.listen(port);
