@@ -9,7 +9,6 @@ okc = require('./okc.js');
 router = new director.http.Router({
   '/' : {
     post: bot.respond,
-    get: ping
     post: okc.respond,
     get: ping
   }
