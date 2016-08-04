@@ -14,30 +14,6 @@ router1 = new director.http.Router({
 });
 
 
-server1 = http.createServer(function (req, res) {
-  req.chunks = [];
-  req.on('data', function (chunk) {
-    req.chunks.push(chunk.toString());
-  });
-
-  router.dispatch(req, res, function(err) {
-    res.writeHead(err.status, {"Content-Type": "text/plain"});
-    res.end(err.message);
-  });
-});
-
-
-
-
-
-router = new director.http.Router({
-  '/' : {
-    post: dickcontrol.respond,
-    get: ping
-  }
-});
-
-
 server = http.createServer(function (req, res) {
   req.chunks = [];
   req.on('data', function (chunk) {
@@ -49,8 +25,6 @@ server = http.createServer(function (req, res) {
     res.end(err.message);
   });
 });
-
-
 
 
 
