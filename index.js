@@ -9,7 +9,6 @@ gif         = require('./gif.js');
 router = new director.http.Router({
   '/' : {
     post: bot.respond,
-    post: gif.respond,
     get: ping
   }
 });
