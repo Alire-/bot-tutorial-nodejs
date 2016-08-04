@@ -1,17 +1,13 @@
-var http, director, cool, bot, router, server, port, okc, gif;
+var http, director, cool, bot, router, server, port;
 
 http        = require('http');
 director    = require('director');
 cool        = require('cool-ascii-faces');
 bot         = require('./bot.js');
-okc         = require('./okc.js');
-gif         = require('./gif.js')
 
 router = new director.http.Router({
   '/' : {
     post: bot.respond,
-    post: okc.respond,
-    post: gif.respond,
     get: ping
   }
 });
