@@ -1,9 +1,8 @@
-var http, director, cool, bot, router, server, port, gif;
+var http, director, cool, bot, router, server, port;
 
 http        = require('http');
 director    = require('director');
 bot         = require('./bot.js');
-gif         = require('./gif.js');
 
 
 router = new director.http.Router({
