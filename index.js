@@ -1,13 +1,15 @@
-var http, director, cool, bot, router, server, port;
+var http, director, cool, bot, router, server, port, okc;
 
 http        = require('http');
 director    = require('director');
 bot         = require('./bot.js');
+okc = require('./okc.js');
 
 
 router = new director.http.Router({
   '/' : {
     post: bot.respond,
+    post: okc.respond,
     get: ping
   }
 });
