@@ -8,7 +8,7 @@ function respondOklahoma() {
 
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
-    postMessage();
+    postOklahoma();
     this.res.end();
   } else {
     console.log("don't care");
@@ -17,8 +17,8 @@ function respondOklahoma() {
   }
 }
 
-function postMessage() {
-  var botResponse, options, body, botReq;
+function postOklahoma() {
+  var botResponse , options, body, botReq;
 
   botResponse = "Shut the fuck up about Oklahoma. Forever";
 
