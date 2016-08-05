@@ -8,7 +8,7 @@ okc = require('./okc.js');
 
 router = new director.http.Router({
   '/' : {
-    post: okc.respondOklahoma, bot.respond,
+    post: bot.respond,
     get: ping
   }
 });
