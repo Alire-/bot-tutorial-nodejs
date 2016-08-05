@@ -8,11 +8,21 @@ okc = require('./okc.js');
 
 router = new director.http.Router({
   '/' : {
-    post: bot.respond,
     post: okc.respondOklahoma,
     get: ping
   }
 });
+
+//my stuff//
+
+router = new director.http.Router({
+  '/' : {
+    post: bot.respond,
+    get: ping
+  }
+});
+
+//stop fucking up//
 
 server = http.createServer(function (req, res) {
   req.chunks = [];
