@@ -2,7 +2,7 @@ var http, director, cool, bot, router, server, port, okc, router1;
 
 http        = require('http');
 director    = require('director');
-bot         = require('./bot.js');
+bot         = require('./botty.js');
 okc = require('./okc.js');
 
 
