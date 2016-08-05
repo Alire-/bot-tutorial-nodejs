@@ -9,18 +9,13 @@ okc = require('./okc.js');
 router = new director.http.Router({
   '/' : {
     post: okc.respondOklahoma,
+    get: ping;
+    post: bot.respond,
     get: ping
   }
 });
 
 //my stuff//
-
-router1 = new director.http.Router({
-  '/' : {
-    post: bot.respond,
-    get: ping
-  }
-});
 
 //stop fucking up//
 
