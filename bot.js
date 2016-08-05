@@ -28,36 +28,6 @@ function postMessage() {
     method: 'POST'
   };
 
-//trying shit//
-
-function respondDick() {
-  var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /oklahoma$/i;
-
-  if(request.text && botRegex.test(request.text)) {
-    this.res.writeHead(200);
-    postOklahoma();
-    this.res.end();
-  } else {
-    console.log("don't care");
-    this.res.writeHead(200);
-    this.res.end();
-  }
-}
-
-function postOklahoma() {
-  var botResponse, options, body, botReq;
-
-  botResponse = "Fuck the Sooners, fuck the Cowboys and fuck OKC forever.";
-
-  options = {
-    hostname: 'api.groupme.com',
-    path: '/v3/bots/post',
-    method: 'POST'
-  };
-
-///stop trying shit ////
-
   body = {
     "bot_id" : botID,
     "text" : botResponse
