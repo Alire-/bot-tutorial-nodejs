@@ -2,7 +2,7 @@ var HTTPS = require('https');
 
 var botID = process.env.BOT_ID;
 
-function respond() {
+function respondOklahoma() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /oklahoma$/i;
 
@@ -53,4 +53,4 @@ function postMessage() {
 }
 
 
-exports.respond = respond;
+exports.respondOklahoma = respondOklahoma;
