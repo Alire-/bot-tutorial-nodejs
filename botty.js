@@ -14,7 +14,7 @@ function respond() {
 
 //ssssss
 
-  else if (request.text && botRegexOkc.test(request.text)) {
+  if (request.text && botRegexOkc.test(request.text)) {
     this.res.writeHead(200);
     postOklahoma();
     this.res.end();
