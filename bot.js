@@ -32,7 +32,7 @@ function postMessage() {
 
 function respondDick() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /dick control$/i;
+      botRegex = /oklahoma$/i;
 
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
