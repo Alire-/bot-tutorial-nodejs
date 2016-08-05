@@ -1,4 +1,4 @@
-var http, director, cool, bot, router, server, port, okc;
+var http, director, cool, bot, router, server, port,port1, router1, server1, okc;
 
 http        = require('http');
 director    = require('director');
@@ -33,16 +33,24 @@ server = http.createServer(function (req, res) {
   router.dispatch(req, res, function(err) {
     res.writeHead(err.status, {"Content-Type": "text/plain"});
     res.end(err.message);
-
-    //more me//
-
-    router1.dispatch(req, res, function(err) {
-      res.writeHead(err.status, {"Content-Type": "text/plain"});
-      res.end(err.message);
-
-    //
   });
 });
+
+//more me//
+
+server1 = http.createServer(function (req, res) {
+  req.chunks = [];
+  req.on('data', function (chunk) {
+    req.chunks.push(chunk.toString());
+  });
+
+  router1.dispatch(req, res, function(err) {
+    res.writeHead(err.status, {"Content-Type": "text/plain"});
+    res.end(err.message);
+  });
+});
+
+//no more me//
 
 port = Number(process.env.PORT || 5000);
 server.listen(port);
@@ -51,3 +59,15 @@ function ping() {
   this.res.writeHead(200);
   this.res.end("Hey, I'm Cool Guy.");
 }
+
+//more me//
+
+port1 = Number(process.env.PORT || 5000);
+server1.listen(port);
+
+function ping() {
+  this.res.writeHead(200);
+  this.res.end("Hey, I'm Cool Guy.");
+}
+
+//less me//
